@@ -10,4 +10,8 @@ function login(body) {
   return axios.post(`${URL}/login`, body);
 }
 
-export { register, login };
+function getCart(config) {
+  return axios.get(`${URL}/cart`, {}, config);
+}
+
+export { register, login, getCart };
