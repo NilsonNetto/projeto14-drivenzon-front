@@ -45,7 +45,9 @@ export default function Header() {
             {userData.cart ? userData.cart.length : 0}
           </CartNumber>
         </CartStyle>
-        <MdLogout onClick={userLogout} />
+        <div>
+          <MdLogout onClick={userLogout} />
+        </div>
       </UserMenu>
     </Wrapper>
   );
@@ -69,6 +71,7 @@ const Logo = styled.div`
   font-size: 25px;
   font-weight: 700;
   color: deeppink;
+  cursor: pointer;
 `;
 
 const UserMenu = styled.div`
@@ -79,6 +82,9 @@ const UserMenu = styled.div`
   font-size: 30px;
   color: deeppink;
 
+  div{
+    cursor: pointer;
+  }
 `;
 
 const CartStyle = styled.div`
@@ -86,6 +92,7 @@ const CartStyle = styled.div`
   width: 40px;
   height: 45px;
   position: relative;
+
 `;
 
 const CartNumber = styled.div`
