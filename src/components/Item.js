@@ -1,29 +1,53 @@
 import styled from "styled-components";
 import { BsTrash } from "react-icons/bs";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import UserContext from "../contexts/UserContext";
+import { deleteFromCart } from "../services/drivenzon.js";
+
 
 export default function Item({ itemData }) {
 
-  const { title, description, image, price, quantity } = itemData;
+  const userData = useContext(UserContext);
+  const { _id, title, description, image, price, quantity, inventory } = itemData;
   const [itemTotalPrice, setItemTotalPrice] = useState('');
   const [itemQuantity, setItemQuantity] = useState(quantity);
 
   function changeQuantity(value) {
-    if (value === 'add') {
+    if (value === 'add' && itemQuantity < inventory) {
       setItemQuantity(itemQuantity + 1);
-    } else if (itemQuantity > 1) {
+    } else if (value === 'remove' && itemQuantity > 1) {
       setItemQuantity(itemQuantity - 1);
     }
   };
 
   useEffect(() => {
-    setItemTotalPrice(price * itemQuantity);
+    setItemTotalPrice((price * itemQuantity) / 100);
   }, [itemQuantity]);
 
   function removeItem() {
     const confirmation = window.confirm(`Deseja excluir o item ${title}`);
     if (confirmation) {
-      //colocar para remover no carrinho do back
+      /* if (userData) {
+        const config = {
+          headers: {
+            Authorization: `Bearer: ${userData.token}`
+          }
+        };
+
+        const body = {
+          deleteId: _id
+        };
+
+        deleteFromCart(body, config)
+          .then(res => {
+            alert('Produto deletado');
+          })
+          .catch(res => {
+            console.log(res.data);
+            alert('Error');
+          });
+      } */
+
       console.log('vai ter uma exclusão');
     }
   }
@@ -68,7 +92,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: pink;
+  background-color: green;
   border-radius: 5px;
   border: 1px solid black;
 `;

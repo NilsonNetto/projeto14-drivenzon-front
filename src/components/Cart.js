@@ -20,7 +20,7 @@ export default function Cart() {
   
         getCart(config)
           .then(res => {
-            setUserCart(res.data);
+            setUserCart(res.data.userCart);
           })
           .catch(res => {
             console.log(res.data);
@@ -33,29 +33,33 @@ export default function Cart() {
     title: "Titulo do item 00",
     description: "Descrição do item 00",
     image: "Foto do item00",
-    price: 20,
-    quantity: 2
+    price: 2000,
+    quantity: 2,
+    inventory: 5
   },
   {
     title: "Titulo do item 01",
     description: "Descrição do item 01",
     image: "Foto do item01",
-    price: 8.55,
-    quantity: 2
+    price: 855,
+    quantity: 2,
+    inventory: 5
   },
   {
     title: "Titulo do item 02",
     description: "Descrição do item 02",
     image: "Foto do item02",
-    price: 10,
-    quantity: 3
+    price: 1000,
+    quantity: 3,
+    inventory: 5
   },
   {
     title: "Titulo do item 03",
     description: "Descrição do item 03",
     image: "Foto do item03",
-    price: 1000,
-    quantity: 1
+    price: 100000,
+    quantity: 1,
+    inventory: 5
   }];
 
   return (

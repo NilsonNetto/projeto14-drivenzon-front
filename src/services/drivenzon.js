@@ -14,4 +14,8 @@ function getCart(config) {
   return axios.get(`${URL}/cart`, {}, config);
 }
 
-export { register, login, getCart };
+function deleteFromCart(body, config) {
+  return axios.delete(`${URL}/cart`, body, config);
+}
+
+export { register, login, getCart, deleteFromCart };
