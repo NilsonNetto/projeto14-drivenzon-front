@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
-import { register } from "../services/mywallet";
+import { register } from "../services/drivenzon.js";
 
 export default function RegisterPage() {
 

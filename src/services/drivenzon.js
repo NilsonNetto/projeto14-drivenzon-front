@@ -10,4 +10,8 @@ function login(body) {
   return axios.post(`${URL}/login`, body);
 }
 
-export { register, login };
+function logout(config) {
+  return axios.delete(`${URL}/logout`, {}, config);
+}
+
+export { register, login, logout };

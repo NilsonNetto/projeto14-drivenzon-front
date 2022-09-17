@@ -4,6 +4,7 @@ import UserContext from "../contexts/UserContext.js";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterPage from "./RegisterPage.js";
+import Header from "./Header.js";
 
 export default function App() {
 
@@ -13,6 +14,7 @@ export default function App() {
     <UserContext.Provider value={{ userData, setUserData }}>
       <BrowserRouter>
         <GlobalStyle />
+        <Header />
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
