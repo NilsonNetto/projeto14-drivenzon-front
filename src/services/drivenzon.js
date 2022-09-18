@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = 'https://localhost:5000';
+const URL = 'https://back-projeto14-drivenzon.herokuapp.com';
 
 function register(body) {
   return axios.post(`${URL}/register`, body);

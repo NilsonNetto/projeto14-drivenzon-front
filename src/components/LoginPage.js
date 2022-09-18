@@ -62,6 +62,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   h1{
+    font-family: 'Saira Stencil One', cursive;
     font-size: 32px;
     margin-bottom: 30px;
   }
@@ -101,8 +102,8 @@ const Form = styled.form`
     border-radius: 5px;
     box-shadow: 0 4 4 0 rgba(0,0,0,0.25);
     cursor: pointer;
-    background-color: #A328D6;
-    border: 1px solid #A32DB6;
+    background-color: magenta;
+    border: 1px solid magenta;
     color: #FFFFFF;
     font-style: 700;
   }

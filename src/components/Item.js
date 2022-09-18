@@ -4,7 +4,6 @@ import { useContext, useEffect, useState } from "react";
 import UserContext from "../contexts/UserContext";
 import { deleteFromCart } from "../services/drivenzon.js";
 
-
 export default function Item({ itemData }) {
 
   const userData = useContext(UserContext);
@@ -21,8 +20,13 @@ export default function Item({ itemData }) {
   };
 
   useEffect(() => {
-    setItemTotalPrice((price * itemQuantity) / 100);
+    setItemTotalPrice(((price * itemQuantity) / 100).toFixed(2));
   }, [itemQuantity]);
+
+  function findQuantity() {
+    const product = userData.cart.find(product => product.productId === _id);
+    setItemQuantity(product.quantity);
+  }
 
   function removeItem() {
     const confirmation = window.confirm(`Deseja excluir o item ${title}`);
@@ -55,7 +59,9 @@ export default function Item({ itemData }) {
   return (
     <Wrapper>
       <Description>
-        <ItemPhoto>{image}</ItemPhoto>
+        <ItemPhoto>
+          <img src={image} alt={title} />
+        </ItemPhoto>
         <ItemText>
           <h3>{title}</h3>
           <p>{description}</p>
@@ -73,12 +79,12 @@ export default function Item({ itemData }) {
         <Price>
           <div>
             <p>Valor un.</p>
-            <p>D$ {price}</p>
+            <p>D$ {(price / 100).toFixed(2)}</p>
           </div>
-          <div>
+          <BoldPrice>
             <p>Total</p>
             <p>D$ {itemTotalPrice}</p>
-          </div>
+          </BoldPrice>
         </Price>
       </ItemData>
     </Wrapper>
@@ -92,9 +98,9 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: green;
+  background-color: pink;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid #C6C6C6;
 `;
 
 const Description = styled.div`
@@ -107,13 +113,18 @@ const ItemPhoto = styled.div`
   width: 100px;
   height: 70px;
   margin-right: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #C6C6C6;
-  background-color: purple;
   display: flex;
   justify-content: center;
   align-items: center;
-  object-fit: cover;
+
+  img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px ;
+    object-fit: cover;
+  }
 `;
 
 const ItemText = styled.div`
@@ -122,10 +133,14 @@ const ItemText = styled.div`
   display: flex;
   flex-direction: column;
 
+  h3{
+    font-weight: 700;
+  }
+
   p{
     margin-top: 10px;
-    color: #C6C6C6;
     font-size: 14px;
+    font-weight: 400;
   }
 `;
 
@@ -135,7 +150,6 @@ const ItemData = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: aqua;
   font-size: 14px;
 `;
 
@@ -193,4 +207,8 @@ const Price = styled.div`
   flex-direction: column;
   align-items: flex-end;
   }
+`;
+
+const BoldPrice = styled.div`
+  font-weight: 700;
 `;

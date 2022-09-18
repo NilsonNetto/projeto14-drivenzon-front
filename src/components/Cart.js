@@ -32,7 +32,7 @@ export default function Cart() {
   const testeCarrinho = [{
     title: "Titulo do item 00",
     description: "Descrição do item 00",
-    image: "Foto do item00",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
     price: 2000,
     quantity: 2,
     inventory: 5
@@ -40,7 +40,7 @@ export default function Cart() {
   {
     title: "Titulo do item 01",
     description: "Descrição do item 01",
-    image: "Foto do item01",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
     price: 855,
     quantity: 2,
     inventory: 5
@@ -48,7 +48,7 @@ export default function Cart() {
   {
     title: "Titulo do item 02",
     description: "Descrição do item 02",
-    image: "Foto do item02",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
     price: 1000,
     quantity: 3,
     inventory: 5
@@ -56,8 +56,104 @@ export default function Cart() {
   {
     title: "Titulo do item 03",
     description: "Descrição do item 03",
-    image: "Foto do item03",
-    price: 100000,
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
+    price: 10000,
+    quantity: 1,
+    inventory: 5
+  },
+  {
+    title: "Titulo do item 03",
+    description: "Descrição do item 03",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
+    price: 10000,
+    quantity: 1,
+    inventory: 5
+  },
+  {
+    title: "Titulo do item 03",
+    description: "Descrição do item 03",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
+    price: 10000,
+    quantity: 1,
+    inventory: 5
+  },
+  {
+    title: "Titulo do item 03",
+    description: "Descrição do item 03",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
+    price: 10000,
+    quantity: 1,
+    inventory: 5
+  },
+  {
+    title: "Titulo do item 03",
+    description: "Descrição do item 03",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
+    price: 10000,
+    quantity: 1,
+    inventory: 5
+  },
+  {
+    title: "Titulo do item 03",
+    description: "Descrição do item 03",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
+    price: 10000,
+    quantity: 1,
+    inventory: 5
+  },
+  {
+    title: "Titulo do item 03",
+    description: "Descrição do item 03",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
+    price: 10000,
+    quantity: 1,
+    inventory: 5
+  },
+  {
+    title: "Titulo do item 03",
+    description: "Descrição do item 03",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
+    price: 10000,
+    quantity: 1,
+    inventory: 5
+  },
+  {
+    title: "Titulo do item 03",
+    description: "Descrição do item 03",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
+    price: 10000,
+    quantity: 1,
+    inventory: 5
+  },
+  {
+    title: "Titulo do item 03",
+    description: "Descrição do item 03",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
+    price: 10000,
+    quantity: 1,
+    inventory: 5
+  },
+  {
+    title: "Titulo do item 03",
+    description: "Descrição do item 03",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
+    price: 10000,
+    quantity: 1,
+    inventory: 5
+  },
+  {
+    title: "Titulo do item 03",
+    description: "Descrição do item 03",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
+    price: 10000,
+    quantity: 1,
+    inventory: 5
+  },
+  {
+    title: "Titulo do item 03",
+    description: "Descrição do item 03",
+    image: "https://www.havan.com.br/media/catalog/product/cache/73a52df140c4d19dbec2b6c485ea6a50/f/o/fone-de-ouvido-bluetooth-pfo01bt-philco_307798_1.jpg",
+    price: 10000,
     quantity: 1,
     inventory: 5
   }];
@@ -74,13 +170,16 @@ export default function Cart() {
 const Wrapper = styled.div`
   width: 100%;
   padding: 20px;
+  margin-top: 50px;
 `;
 
 const Items = styled.div`
   width: 100%;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   background-color: white;
+  border-radius: 5px;
   color: #333333;
   font-size: 16px;
   gap: 15px;
