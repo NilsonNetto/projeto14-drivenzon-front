@@ -9,6 +9,7 @@ export default function Cart() {
 
   const userData = useContext(UserContext);
   const [userCart, setUserCart] = useState([]);
+  const [cartPrice, setCartPrice] = useState('');
 
   /*   useEffect(() => {
       if (userData) {
@@ -20,6 +21,7 @@ export default function Cart() {
   
         getCart(config)
           .then(res => {
+            calculateCartPrice(res.data.userCart);
             setUserCart(res.data.userCart);
           })
           .catch(res => {
@@ -158,30 +160,66 @@ export default function Cart() {
     inventory: 5
   }];
 
+  function calculateCartPrice(cart) {
+    let totalPrice = 0;
+    cart.map(product => { totalPrice += (product.price * product.quantity); });
+    setCartPrice((totalPrice / 100).toFixed(2));
+  }
+
+  useEffect(() => {
+    calculateCartPrice(testeCarrinho);
+  }, []);
+
   return (
     <Wrapper>
       <Items>
         {testeCarrinho.map((item, index) => <Item key={index} itemData={item} />)}
       </Items>
+      <Total>
+        <p>Total</p>
+        <p>D$ {cartPrice}</p>
+      </Total>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
   width: 100%;
+  height: 90vh;
   padding: 20px;
   margin-top: 50px;
+  position: absolute;
 `;
 
 const Items = styled.div`
   width: 100%;
+  height: 100%;
+  overflow: auto;
   padding: 5px;
   display: flex;
   flex-direction: column;
   background-color: white;
-  border-radius: 5px;
+  border: 1px solid #333333;
+  border-radius: 5px 5px 0 0;
   color: #333333;
   font-size: 16px;
   gap: 15px;
 `;
+
+const Total = styled.div`
+  width: 100%;
+  height: 30px;
+  padding: 0px 10px;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #333333;
+  background-color: magenta;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: #333333;
+  position: relative;
+  bottom: 0;
+  left: 0;
+`
 
