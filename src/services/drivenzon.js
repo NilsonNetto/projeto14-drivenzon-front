@@ -10,6 +10,10 @@ function login(body) {
   return axios.post(`${URL}/login`, body);
 }
 
+function logout(config) {
+  return axios.delete(`${URL}/logout`, {}, config);
+}
+
 function getCart(config) {
   return axios.get(`${URL}/cart`, {}, config);
 }
@@ -18,4 +22,4 @@ function deleteFromCart(body, config) {
   return axios.delete(`${URL}/cart`, body, config);
 }
 
-export { register, login, getCart, deleteFromCart };
+export { register, login, logout, getCart, deleteFromCart };

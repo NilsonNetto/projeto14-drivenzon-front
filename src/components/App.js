@@ -4,6 +4,7 @@ import UserContext from "../contexts/UserContext.js";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterPage from "./RegisterPage.js";
+import Header from "./Header.js";
 import Cart from "./Cart.js";
 
 export default function App() {
@@ -17,7 +18,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/cart" element={<Cart />} />
+          <Header>
+            <Route path="/cart" element={<Cart />} />
+          <Header/>
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
