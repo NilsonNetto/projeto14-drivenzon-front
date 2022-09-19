@@ -9,10 +9,10 @@ import Logo from "./../../assets/icons/logodriven.svg";
 import { sidebarData } from "./SidebarData.js";
 import LoadingBox from "../LoadingBox";
 import MessageBox from "../MessageBox";
-import UserContext from "../context/UserContext";
+import UserContext from "../../contexts/UserContext.js";
 
 function CheckOutPage() {
-    dotenv.config()
+  dotenv.config();
   const navigate = useNavigate();
   const [sidebar, setSidebar] = useState(false);
   const { cart, setCart } = useContext(UserContext);
@@ -20,8 +20,8 @@ function CheckOutPage() {
   const [error, setError] = useState(false);
   const submitHandler = (e) => {
     alert("Agradecemos a preferencia");
-    setCart([])
-    navigate("/")
+    setCart([]);
+    navigate("/");
   };
   function handleSidebar() {
     setSidebar(!sidebar);
@@ -66,8 +66,8 @@ function CheckOutPage() {
           </Link>
           <div className="Options">
             <strong><Link to="/cart">
-                Cart
-              </Link></strong>
+              Cart
+            </Link></strong>
           </div>
         </NavBar>
       </Header>
@@ -205,7 +205,7 @@ const NavBar = styled.nav`
 const Main = styled.main`
   width: 100%;
   height: 100vh;
-  backgroud-color: #ffffff;
+  background-color: #ffffff;
   nav-menu active{
   }
   section {

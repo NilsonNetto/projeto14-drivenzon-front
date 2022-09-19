@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import React, { useContext, useEffect, useState} from "react";
-import {Link, useNavigate} from "react-router-dom";
-import {FaBars} from "react-icons/fa"
-import {AiOutlineClose} from "react-icons/ai"
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
 import axios from "axios";
 
 
@@ -11,22 +11,22 @@ import { sidebarData } from "./SidebarData.js";
 import LoadingBox from "../LoadingBox";
 import Product from "../Product";
 import MessageBox from "../MessageBox";
-import UserContext from "../context/UserContext";
+import UserContext from "../../contexts/UserContext";
 
 function MainPage() {
   const [sidebar, setSidebar] = useState(false);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const {user} = useContext(UserContext)
+  const { user } = useContext(UserContext);
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
         const { data } = await axios.get("/products");
         setLoading(false);
-        console.log(data)
-        console.log(user)
+        console.log(data);
+        console.log(user);
         setProducts(data);
       } catch (error) {
         setError(error.message);
@@ -36,8 +36,8 @@ function MainPage() {
     fetchData();
   }, []);
 
-  function handleSidebar(){
-    setSidebar(!sidebar)
+  function handleSidebar() {
+    setSidebar(!sidebar);
   }
 
   return (
@@ -45,7 +45,7 @@ function MainPage() {
       <Header>
         <div className="Title ">
           <Link to="#" className="menu-bars">
-          <FaBars className="fabars" onClick={handleSidebar}/>
+            <FaBars className="fabars" onClick={handleSidebar} />
           </Link>
           <img src={Logo} alt="Logo driven  " />
         </div>
@@ -57,8 +57,8 @@ function MainPage() {
                   <AiOutlineClose />
                 </Link>
               </li>
-              {sidebarData.map((item,index) => {
-                return(
+              {sidebarData.map((item, index) => {
+                return (
                   <li key={index} className={item.className}>
                     <Link to={item.path}>
                       {item.icon}
@@ -67,7 +67,7 @@ function MainPage() {
                       </span>
                     </Link>
                   </li>
-                )
+                );
               })}
             </ul>
           </nav>
@@ -82,10 +82,10 @@ function MainPage() {
           <Message>Welcome to Drivazon</Message>
         </section>
         <section>
-          {loading ? ( 
+          {loading ? (
             <LoadingBox></LoadingBox>
-          ): error ? (
-            <MessageBox variant = "danger"></MessageBox>
+          ) : error ? (
+            <MessageBox variant="danger"></MessageBox>
           ) : (
             <article>
               <div className="rows center">
@@ -97,7 +97,7 @@ function MainPage() {
           )}
         </section>
       </Main>
-          <Footer>All rights reserved</Footer>
+      <Footer>All rights reserved</Footer>
     </>
   );
 }
@@ -215,7 +215,7 @@ const NavBar = styled.nav`
 const Main = styled.main`
   width: 100%;
   height: 124.5rem;
-  backgroud-color: #ffffff;
+  background-color: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   section{
     width:100%;
@@ -232,7 +232,7 @@ const Main = styled.main`
     height: 400px;
     display:flex;
     flex-wrap: wrap;
-    justify-content;
+    justify-content: center;
     align-items:center;
     background-color:orange;
   }
@@ -255,7 +255,7 @@ const Message = styled.h1`
   align-items: center;
   text-align: center;
   color: #000000;
-`
+`;
 
 const Footer = styled.footer`
   position: absolute;
@@ -269,4 +269,4 @@ const Footer = styled.footer`
   font-size: 32px;
   line-height: 44px;
   background-color: orange;
-`
+`;

@@ -11,7 +11,7 @@ export const sidebarData = [
   },
   {
     title: "Login",
-    path: "/signin",
+    path: "/login",
     icon: <AiIcons.AiOutlineLogin />,
     className: "nav-text",
   },

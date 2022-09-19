@@ -4,11 +4,10 @@ import UserContext from "../contexts/UserContext.js";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterPage from "./RegisterPage.js";
-import Header from "./Header.js";
 import Cart from "./Cart.js";
 import MainPage from "./pages/MainPage.js";
 import ProductPage from "./pages/ProductPage.js";
-import CheckOutPage from "./pages/CheckOutPage.js";
+import CheckOutPage from "./pages/CheckoutPage.js";
 
 export default function App() {
 
@@ -21,12 +20,10 @@ export default function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Header>
-           <Route path="/" element={<MainPage />} />
-           <Route path="/product/:id" element={<ProductPage />} />
-           <Route path="/cart" element={<Cart />} />
-           <Route path="/checkout" element={<CheckOutPage />} />
-          </Header>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<CheckOutPage />} />
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>

@@ -11,7 +11,7 @@ import LoadingBox from "../LoadingBox.js";
 import MessageBox from "../MessageBox.js";
 import Logo from "./../../assets/icons/logodriven.svg";
 import { sidebarData } from "./SidebarData.js";
-import UserContext from "./../context/UserContext";
+import UserContext from "../../contexts/UserContext.js";
 
 export default function ProductPage(props) {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ export default function ProductPage(props) {
   const [error, setError] = useState(false);
   const [sidebar, setSidebar] = useState(false);
 
-  const { cart, setCart } = useContext(UserContext)
+  const { cart, setCart } = useContext(UserContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,7 +32,7 @@ export default function ProductPage(props) {
           `/products/${id}`
         );
         setLoading(false);
-        console.log("0133")
+        console.log("0133");
         setProductDetails(data);
       } catch (error) {
         if (error.response && error.response.data.message)
@@ -45,12 +45,12 @@ export default function ProductPage(props) {
   }, []);
 
   function addToCartHandler() {
-    for(let i = 0; i < quantity; i++){
-      setCart((previusvalue) => [...previusvalue,{productsDetails: productsDetails}])
+    for (let i = 0; i < quantity; i++) {
+      setCart((previusvalue) => [...previusvalue, { productsDetails: productsDetails }]);
     }
-    console.log(cart)
-    alert("Product added to the cart!")
-    
+    console.log(cart);
+    alert("Product added to the cart!");
+
   }
 
   function handleSidebar() {
@@ -312,7 +312,7 @@ const NavBar = styled.nav`
 const Main = styled.main`
   width: 100%;
   height: 100vh;
-  backgroud-color: #ffffff;
+  background-color: #ffffff;
   section {
     width: 100%;
     display: flex;
