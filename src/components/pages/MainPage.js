@@ -79,7 +79,7 @@ function MainPage() {
       </Header>
       <Main>
         <section>
-          <Message>Welcome to Drivazon</Message>
+          <Message>Welcome to drivenzon</Message>
         </section>
         <section>
           {loading ? (

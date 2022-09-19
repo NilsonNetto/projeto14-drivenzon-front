@@ -63,7 +63,7 @@ export default function RegisterPage() {
           required />
         <button>Cadastrar</button>
       </Form>
-      <Link to='/'>Já tem uma conta? Entre agora!</Link>
+      <Link to='/login'>Já tem uma conta? Entre agora!</Link>
     </Wrapper>
   );
 }
