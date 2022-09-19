@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterPage from "./RegisterPage.js";
 import Header from "./Header.js";
 import Cart from "./Cart.js";
+import MainPage from "./pages/MainPage.js";
+import ProductPage from "./pages/ProductPage.js";
+import CheckOutPage from "./pages/CheckOutPage.js";
 
 export default function App() {
 
@@ -16,11 +19,14 @@ export default function App() {
       <BrowserRouter>
         <GlobalStyle />
         <Routes>
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Header>
-            <Route path="/cart" element={<Cart />} />
-          <Header/>
+           <Route path="/" element={<MainPage />} />
+           <Route path="/product/:id" element={<ProductPage />} />
+           <Route path="/cart" element={<Cart />} />
+           <Route path="/checkout" element={<CheckOutPage />} />
+          </Header>
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
