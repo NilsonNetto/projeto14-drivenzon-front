@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = 'https://localhost:5000';
+const URL = 'https://back-projeto14-drivenzon.herokuapp.com';
 
 function register(body) {
   return axios.post(`${URL}/register`, body);
@@ -14,4 +14,12 @@ function logout(config) {
   return axios.delete(`${URL}/logout`, {}, config);
 }
 
-export { register, login, logout };
+function getCart(config) {
+  return axios.get(`${URL}/cart`, {}, config);
+}
+
+function deleteFromCart(body, config) {
+  return axios.delete(`${URL}/cart`, body, config);
+}
+
+export { register, login, logout, getCart, deleteFromCart };
