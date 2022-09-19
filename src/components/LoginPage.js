@@ -22,7 +22,7 @@ export default function LoginPage() {
     login(body)
       .then(res => {
         setUserData(res.data);
-        navigate('/main');
+        navigate('/');
       })
       .catch(res => {
         console.log(res.data);

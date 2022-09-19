@@ -74,7 +74,7 @@ function MainPage() {
         </div>
         <NavBar> {/* A ideia aqui é pra cada um dos elementos ter um dropdown */}
           <Link to="/contact" className="Options">Contact Us</Link>
-          <div className="Options"><strong>Cart</strong></div>
+          <Link to="/cart" className="Options"><strong>Cart</strong></Link>
         </NavBar>
       </Header>
       <Main>
